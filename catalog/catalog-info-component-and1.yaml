@@ -1,0 +1,58 @@
+# System
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata: 
+  name: One-Login
+  description: Swiss Life's Authentication solution, based on Identity Server.
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  links:
+  - url: https://id.a.portals.swisslife.ch/
+    title: Developer front-end to One-Login
+    icon: dashboard
+  annotations:
+    backstage.io/techdocs-ref: dir:.    
+    backstage.io/source-location: url:https://dev.azure.com/swisslife/IT-Dev-Community/_git/One-Login
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  lifecycle: production
+# sub-systems (components)
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: SwissLife.Configuration
+  description: Swiss Life library for handling configuration
+  tags:
+    - dotnet
+    - library
+  annotations:
+    dev.azure.com/project-repo: F2C/Configuration-Core
+spec:
+  type: library
+  owner: common
+  lifecycle: production
+  dependsOn: 
+    - ADConnect  
+---
+# Components (high level solutions)
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: ADConnect
+  description: provides integration with Azure Active Directory
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
