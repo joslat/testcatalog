@@ -7,7 +7,7 @@ metadata:
   tags:
     - dotnet
     - aspnet
-    - Identity-Server
+    - identityserver
   links:
   - url: https://id.a.portals.swisslife.ch/
     title: Developer front-end to One-Login

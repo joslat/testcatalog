@@ -7,7 +7,7 @@ metadata:
   tags:
     - dotnet
     - aspnet
-    - Identity-Server
+    - identityserver
   links:
   - url: https://id.a.portals.swisslife.ch/
     title: Developer front-end to One-Login
@@ -34,7 +34,7 @@ metadata:
   tags:
     - dotnet
     - aspnet
-    - Identity-Server
+    - identityserver
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -54,7 +54,7 @@ metadata:
   tags:
     - dotnet
     - aspnet
-    - Identity-Server
+    - identityserver
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -74,7 +74,7 @@ metadata:
   tags:
     - dotnet
     - aspnet
-    - Identity-Server
+    - identityserver
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -94,7 +94,7 @@ metadata:
   tags:
     - dotnet
     - aspnet
-    - Identity-Server
+    - identityserver
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -117,7 +117,7 @@ metadata:
   tags:
     - dotnet
     - aspnet
-    - Identity-Server
+    - identityserver
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
