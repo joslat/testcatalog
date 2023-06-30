@@ -79,8 +79,6 @@ spec:
   owner: common
   system: One-Login
   lifecycle: production
-  dependsOn:  
-    - ADConnect
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
