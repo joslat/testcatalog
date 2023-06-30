@@ -47,7 +47,7 @@ spec:
     - One-Login-Provisioning  
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: component
 metadata: 
   name: One-Login-Identity-Classic
   description: Swiss Life's Authentication solution for our old Auth stack (ADSVUM).
@@ -64,7 +64,7 @@ spec:
   lifecycle: production
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: component
 metadata: 
   name: One-Login-Provisioning
   description: Swiss Life's Authentication integration solution for other systems, to synchronize users with C4C, SAP, etc...
@@ -81,7 +81,7 @@ spec:
   lifecycle: production
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: component
 metadata: 
   name: ADConnect
   description: provides integration with Azure Active Directory
