@@ -7,7 +7,7 @@ metadata:
   tags:
     - dotnet
     - ASP.NET
-    - Identity Server
+    - Identity-Server
   links:
   - url: https://id.a.portals.swisslife.ch/
     title: Developer front-end to One-Login
@@ -34,7 +34,7 @@ metadata:
   tags:
     - dotnet
     - ASP.NET
-    - Identity Server
+    - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -54,7 +54,7 @@ metadata:
   tags:
     - dotnet
     - ASP.NET
-    - Identity Server
+    - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -74,7 +74,7 @@ metadata:
   tags:
     - dotnet
     - ASP.NET
-    - Identity Server
+    - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -94,7 +94,7 @@ metadata:
   tags:
     - dotnet
     - ASP.NET
-    - Identity Server
+    - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -117,7 +117,7 @@ metadata:
   tags:
     - dotnet
     - ASP.NET
-    - Identity Server
+    - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -265,7 +265,7 @@ metadata:
   tags:
     - dotnet
     - library
-    - ASP.NET Core
+    - ASP.NET-Core
   annotations:
     backstage.io/source-location: url:https://github.com/DuendeSoftware/IdentityServer
   links:  
@@ -286,7 +286,7 @@ metadata:
   tags:
     - dotnet
     - library
-    - ASP.NET Core
+    - ASP.NET-Core
   annotations:
     backstage.io/source-location: url:https://github.com/SwissLife-OSS/IdOps
   links:  
