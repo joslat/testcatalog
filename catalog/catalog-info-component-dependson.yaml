@@ -1,0 +1,100 @@
+# System
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata: 
+  name: One-Login
+  description: Swiss Life's Authentication solution, based on Identity Server.
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  links:
+  - url: https://id.a.portals.swisslife.ch/
+    title: Developer front-end to One-Login
+    icon: dashboard
+  annotations:
+    backstage.io/techdocs-ref: dir:.    
+    backstage.io/source-location: url:https://dev.azure.com/swisslife/IT-Dev-Community/_git/One-Login
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  lifecycle: production
+  dependsOn:  
+    - One-Login-Identity
+    - One-Login-Identity-Classic
+    - One-Login-Provisioning
+# sub-systems (components)
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-Login-Identity
+  description: Swiss Life's Authentication solution for our modern Auth stack.
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+  dependsOn:  
+    - One-Login-Identity-Classic
+    - One-Login-Provisioning  
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-Login-Identity-Classic
+  description: Swiss Life's Authentication solution for our old Auth stack (ADSVUM).
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-Login-Provisioning
+  description: Swiss Life's Authentication integration solution for other systems, to synchronize users with C4C, SAP, etc...
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+  dependsOn:  
+    - ADConnect
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: ADConnect
+  description: provides integration with Azure Active Directory
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
