@@ -265,7 +265,7 @@ metadata:
   tags:
     - dotnet
     - library
-    - ASPNET-Core
+    - ASPNET
   annotations:
     backstage.io/source-location: url:https://github.com/DuendeSoftware/IdentityServer
   links:  
@@ -286,7 +286,7 @@ metadata:
   tags:
     - dotnet
     - library
-    - ASPNET-Core
+    - ASPNET
   annotations:
     backstage.io/source-location: url:https://github.com/SwissLife-OSS/IdOps
   links:  
