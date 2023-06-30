@@ -20,24 +20,62 @@ spec:
   type: service
   owner: common
   lifecycle: production
+  dependsOn:  
+    - One-Login-Identity
+    - One-Login-Identity-Classic
+    - One-Login-Provisioning
 # sub-systems (components)
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata: 
-  name: SwissLife.Configuration
-  description: Swiss Life library for handling configuration
+  name: One-Login-Identity
+  description: Swiss Life's Authentication solution for our modern Auth stack.
   tags:
     - dotnet
-    - library
+    - aspnet
+    - identityserver
   annotations:
-    dev.azure.com/project-repo: F2C/Configuration-Core
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
-  type: library
+  type: service
   owner: common
+  system: One-Login
   lifecycle: production
-  dependsOn: 
-    - ADConnect  
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-Login-Identity-Classic
+  description: Swiss Life's Authentication solution for our old Auth stack (ADSVUM).
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-Login-Provisioning
+  description: Swiss Life's Authentication integration solution for other systems, to synchronize users with C4C, SAP, etc...
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
