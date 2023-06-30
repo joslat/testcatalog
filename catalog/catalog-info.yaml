@@ -6,7 +6,7 @@ metadata:
   description: Swiss Life's Authentication solution, based on Identity Server.
   tags:
     - dotnet
-    - ASPNET
+    - aspnet
     - Identity-Server
   links:
   - url: https://id.a.portals.swisslife.ch/
@@ -33,7 +33,7 @@ metadata:
   description: Swiss Life's Authentication solution for our modern Auth stack.
   tags:
     - dotnet
-    - ASPNET
+    - aspnet
     - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
@@ -53,7 +53,7 @@ metadata:
   description: Swiss Life's Authentication solution for our old Auth stack (ADSVUM).
   tags:
     - dotnet
-    - ASPNET
+    - aspnet
     - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
@@ -73,7 +73,7 @@ metadata:
   description: Swiss Life's Authentication integration solution for other systems, to synchronize users with C4C, SAP, etc...
   tags:
     - dotnet
-    - ASPNET
+    - aspnet
     - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
@@ -93,7 +93,7 @@ metadata:
   description: provides integration with Azure Active Directory
   tags:
     - dotnet
-    - ASPNET
+    - aspnet
     - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
@@ -116,7 +116,7 @@ metadata:
   description: provides integration with Azure Active Directory
   tags:
     - dotnet
-    - ASPNET
+    - aspnet
     - Identity-Server
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
@@ -142,7 +142,7 @@ metadata:
   description: Authentication integration solution for other systems, to synchronize users with C4C, SAP, etc...
   tags:
     - dotnet
-    - ASPNET
+    - aspnet
   annotations:
     dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
@@ -265,7 +265,7 @@ metadata:
   tags:
     - dotnet
     - library
-    - ASPNET
+    - aspnet
   annotations:
     backstage.io/source-location: url:https://github.com/DuendeSoftware/IdentityServer
   links:  
@@ -286,7 +286,7 @@ metadata:
   tags:
     - dotnet
     - library
-    - ASPNET
+    - aspnet
   annotations:
     backstage.io/source-location: url:https://github.com/SwissLife-OSS/IdOps
   links:  
