@@ -21,9 +21,9 @@ spec:
   owner: common
   lifecycle: production
   dependsOn:  
-    - One-Login-Identity
-    - One-Login-Identity-Classic
-    - One-Login-Provisioning
+    - component:One-Login-Identity
+    - component:One-Login-Identity-Classic
+    - component:One-Login-Provisioning
 # sub-systems (components)
 ---
 apiVersion: backstage.io/v1alpha1
@@ -43,8 +43,8 @@ spec:
   system: One-Login
   lifecycle: production
   dependsOn: 
-    - IdentityServer
-    - ADConnect
+    - component:IdentityServer
+    - component:ADConnect
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -63,8 +63,8 @@ spec:
   system: One-Login
   lifecycle: production
   dependsOn: 
-    - IdentityServer
-    - ADConnect  
+    - component:IdentityServer
+    - component:ADConnect  
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -83,7 +83,7 @@ spec:
   system: One-Login
   lifecycle: production
   dependsOn: 
-    - Provisioning
+    - component:Provisioning
 ---
 # Components (high level solutions)
 apiVersion: backstage.io/v1alpha1
@@ -103,11 +103,11 @@ spec:
   system: One-Login
   lifecycle: production
   dependsOn: 
-    - SwissLife.Configuration
-    - SwissLife.Security
-    - SwissLife.Health
-    - SwissLife.Observability
-    - HotChocolate
+    - component:SwissLife.Configuration
+    - component:SwissLife.Security
+    - component:SwissLife.Health
+    - component:SwissLife.Observability
+    - component:HotChocolate
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -126,14 +126,14 @@ spec:
   system: One-Login
   lifecycle: production
   dependsOn: 
-    - SwissLife.Configuration
-    - SwissLife.Security
-    - SwissLife.Health
-    - SwissLife.Observability
-    - HotChocolate
-    - StrawberryShake
-    - Duende.IdentityServer
-    - IdOps.IdentityServer
+    - component:SwissLife.Configuration
+    - component:SwissLife.Security
+    - component:SwissLife.Health
+    - component:SwissLife.Observability
+    - component:HotChocolate
+    - component:StrawberryShake
+    - component:Duende.IdentityServer
+    - component:IdOps.IdentityServer
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -151,10 +151,10 @@ spec:
   system: One-Login
   lifecycle: production
   dependsOn: 
-    - SwissLife.Configuration
-    - SwissLife.Security
-    - SwissLife.Health
-    - SwissLife.Observability
+    - component:SwissLife.Configuration
+    - component:SwissLife.Security
+    - component:SwissLife.Health
+    - component:SwissLife.Observability
 # external systems/components
 ---
 apiVersion: backstage.io/v1alpha1
