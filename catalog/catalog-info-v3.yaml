@@ -1,0 +1,358 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata: 
+  name: One-Login
+  description: Swiss Life's Authentication solution, based on Identity Server.
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  links:
+  - url: https://id.a.portals.swisslife.ch/
+    title: Developer front-end to One-Login
+    icon: dashboard
+  annotations:
+    backstage.io/techdocs-ref: dir:.    
+    backstage.io/source-location: url:https://dev.azure.com/swisslife/IT-Dev-Community/_git/One-Login
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  lifecycle: production
+  dependsOn:  
+    - One-Login-Identity
+    - One-Login-Identity-Classic
+    - One-Login-Provisioning
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-Login-Identity
+  description: Swiss Life's Authentication solution for our modern Auth stack.
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+  dependsOn: 
+    - component:IdentityServer
+    - component:ADConnect
+    - resource:onelogin-identity-dev
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-Login-Identity-Classic
+  description: Swiss Life's Authentication solution for our old Auth stack (ADSVUM).
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+  dependsOn: 
+    - component:IdentityServer
+    - component:ADConnect 
+    - resource:onelogin-identity-classic-dev   
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-Login-Provisioning
+  description: Swiss Life's Authentication integration solution for other systems, to synchronize users with C4C, SAP, etc...
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+  dependsOn: 
+    - component:Provisioning
+    - resource:onelogin-provisioning-dev    
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: ADConnect
+  description: provides integration with Azure Active Directory
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+  dependsOn: 
+    - component:SwissLife.Configuration
+    - component:SwissLife.Security
+    - component:SwissLife.Health
+    - component:SwissLife.Observability
+    - component:HotChocolate
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: IdentityServer
+  description: provides integration with Azure Active Directory
+  tags:
+    - dotnet
+    - aspnet
+    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+  dependsOn: 
+    - component:SwissLife.Configuration
+    - component:SwissLife.Security
+    - component:SwissLife.Health
+    - component:SwissLife.Observability
+    - component:HotChocolate
+    - component:StrawberryShake
+    - component:Duende.IdentityServer
+    - component:IdOps.IdentityServer
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: Provisioning
+  description: Authentication integration solution for other systems, to synchronize users with C4C, SAP, etc...
+  tags:
+    - dotnet
+    - aspnet
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
+spec:
+  type: service
+  owner: common
+  system: One-Login
+  lifecycle: production
+  dependsOn: 
+    - component:SwissLife.Configuration
+    - component:SwissLife.Security
+    - component:SwissLife.Health
+    - component:SwissLife.Observability
+# external systems/components
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: SwissLife.Configuration
+  description: Swiss Life library for handling configuration
+  tags:
+    - dotnet
+    - library
+  annotations:
+    dev.azure.com/project-repo: F2C/Configuration-Core
+spec:
+  type: library
+  owner: common
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: SwissLife.Security
+  description: Swiss Life library for handling security
+  tags:
+    - dotnet
+    - library
+  annotations:
+    dev.azure.com/project-repo: F2C/Common-Core
+spec:
+  type: library
+  owner: common
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: SwissLife.Health
+  description: Swiss Life library for managing and controlling app health
+  tags:
+    - dotnet
+    - library
+  annotations:
+    dev.azure.com/project-repo: F2C/Common-Core
+spec:
+  type: library
+  owner: common
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: SwissLife.Observability
+  description: Swiss Life library for integrating with our Observability platform
+  tags:
+    - dotnet
+    - library
+  annotations:
+    dev.azure.com/project-repo: F2C/Common-Core
+spec:
+  type: library
+  owner: common
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: HotChocolate
+  description: The leading GraphQL library for .NET
+  tags:
+    - dotnet
+    - library
+  annotations:
+    backstage.io/source-location: url:https://github.com/ChilliCream/graphql-platform
+  links:  
+    - url: https://chillicream.com/docs/hotchocolate/  
+      title: Library Website  
+      icon: language  
+      type: documentation    
+spec:
+  type: library
+  owner: ChilliCream
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: StrawberryShake
+  description: The best client for the leading GraphQL library for .NET
+  tags:
+    - dotnet
+    - library
+  annotations:
+    backstage.io/source-location: url:https://github.com/ChilliCream/graphql-platform
+  links:  
+    - url: https://chillicream.com/docs/strawberryshake/  
+      title: Library Website  
+      icon: language  
+      type: documentation    
+spec:
+  type: library
+  owner: ChilliCream
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: Duende.IdentityServer
+  description: The most flexible and standards-compliant OpenID Connect and OAuth 2.x framework for ASP.NET Core
+  tags:
+    - dotnet
+    - library
+    - aspnet
+  annotations:
+    backstage.io/source-location: url:https://github.com/DuendeSoftware/IdentityServer
+  links:  
+    - url: https://duendesoftware.com/products/identityserver  
+      title: Library Website  
+      icon: language  
+      type: documentation    
+spec:
+  type: library
+  owner: Duende
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: IdOps.IdentityServer
+  description: IdOps is a multi-tenant Identity Server resource management platform
+  tags:
+    - dotnet
+    - library
+    - aspnet
+  annotations:
+    backstage.io/source-location: url:https://github.com/SwissLife-OSS/IdOps
+  links:  
+    - url: https://github.com/SwissLife-OSS/IdOps  
+      title: Library Website  
+      icon: language  
+      type: documentation    
+spec:
+  type: library
+  owner: SwissLife-OSS
+  lifecycle: production
+  
+# resources (TBD)
+---
+apiVersion: backstage.io/v1alpha1  
+kind: Resource  
+metadata:  
+  name: onelogin-identity-dev 
+  description: OneLogin-Identity API  k8s deployment (development)
+  labels:  
+    environment: development  
+  links:
+    - url: https://id.a.portals.swisslife.ch/
+      title: App
+      icon: dashboard 
+  annotations:  
+    backstage.io/external-url: https://id.a.portals.swisslife.ch
+spec:  
+  type: kubernetes-deployment  
+  owner: common 
+  system: One-Login 
+---
+apiVersion: backstage.io/v1alpha1  
+kind: Resource  
+metadata:  
+  name: onelogin-identity-classic-dev 
+  description: OneLogin-Identity-Classic API k8s deployment (development)
+  labels:  
+    environment: development
+  links:
+    - url: https://id-classic.a.portals.swisslife.ch/
+      title: App
+      icon: dashboard        
+  annotations:  
+    backstage.io/external-url: https://id-classic.a.portals.swisslife.ch      
+spec:  
+  type: kubernetes-deployment  
+  owner: common 
+  system: One-Login 
+---
+apiVersion: backstage.io/v1alpha1  
+kind: Resource  
+metadata:  
+  name: onelogin-provisioning-dev 
+  description: onelogin-provisioning API k8s deployment (development)
+  labels:  
+    environment: development
+  links:
+    - url: https://onelogin-provisioning.a.portals.swisslife.ch/
+      title: App
+      icon: dashboard        
+  annotations:  
+    backstage.io/external-url: https://onelogin-provisioning.a.portals.swisslife.ch      
+spec:  
+  type: kubernetes-deployment  
+  owner: common 
+  system: One-Login  
+# API
+# Location??  
