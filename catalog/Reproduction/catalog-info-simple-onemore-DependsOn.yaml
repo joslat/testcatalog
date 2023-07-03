@@ -118,3 +118,6 @@ spec:
   type: library
   owner: me
   lifecycle: production  
+  subcomponentOf: 
+    - component:subcomponent2
+    - component:One-3
