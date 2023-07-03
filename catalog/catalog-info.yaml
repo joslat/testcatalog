@@ -1,4 +1,3 @@
-# System
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata: 
@@ -21,10 +20,9 @@ spec:
   owner: common
   lifecycle: production
   dependsOn:  
-    - component:One-Login-Identity
-    - component:One-Login-Identity-Classic
-    - component:One-Login-Provisioning
-# sub-systems (components)
+    - One-Login-Identity
+    - One-Login-Identity-Classic
+    - One-Login-Provisioning
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -85,7 +83,6 @@ spec:
   dependsOn: 
     - component:Provisioning
 ---
-# Components (high level solutions)
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata: 
