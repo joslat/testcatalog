@@ -42,9 +42,6 @@ spec:
   owner: common
   system: One-Login
   lifecycle: production
-  dependsOn:  
-    - One-Login-Identity-Classic
-    - One-Login-Provisioning  
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -80,19 +77,19 @@ spec:
   system: One-Login
   lifecycle: production
   dependsOn:  
-    - ADConnect
+    - One-More
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata: 
-  name: ADConnect
-  description: provides integration with Azure Active Directory
+  name: One-More
+  description: Swiss Life's Authentication integration solution for other systems, to synchronize users with C4C, SAP, etc...
   tags:
     - dotnet
-    - aspnet
-    - identityserver
+  annotations:
+    dev.azure.com/project-repo: IT-Dev-Community/One-Login
 spec:
-  type: library
+  type: service
   owner: common
   system: One-Login
   lifecycle: production
