@@ -51,6 +51,7 @@ spec:
   dependsOn:  
     - component:subcomponent4
     - component:subcomponent5
+    - component:One-More    
     - component:subcomponent6        
 ---
 apiVersion: backstage.io/v1alpha1
