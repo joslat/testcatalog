@@ -46,7 +46,7 @@ metadata:
 spec:
   type: service
   owner: me
-  system: One-Login
+  system: One
   lifecycle: production
 ---
 apiVersion: backstage.io/v1alpha1
