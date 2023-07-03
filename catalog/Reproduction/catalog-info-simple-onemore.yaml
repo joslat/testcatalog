@@ -61,7 +61,7 @@ spec:
   type: service
   owner: me
   system: One
-  lifecycle: production
+  lifecycle: production 
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component

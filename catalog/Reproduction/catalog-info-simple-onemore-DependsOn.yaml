@@ -48,6 +48,10 @@ spec:
   owner: me
   system: One
   lifecycle: production
+  dependsOn:  
+    - component:subcomponent4
+    - component:subcomponent5
+    - component:subcomponent6        
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -105,7 +109,7 @@ spec:
   owner: me
   lifecycle: production
   dependsOn:  
-    - component:subcomponent3  
+    - component:subcomponent3
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -118,6 +122,41 @@ spec:
   type: library
   owner: me
   lifecycle: production  
-  subcomponentOf: 
-    - component:subcomponent2
-    - component:One-3
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent4
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: library
+  owner: me
+  lifecycle: production
+  dependsOn:  
+    - component:subcomponent6  
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent5
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: service
+  owner: me
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent6
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: service
+  owner: me
+  lifecycle: production      
