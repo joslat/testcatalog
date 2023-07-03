@@ -64,6 +64,9 @@ spec:
   lifecycle: production
   dependsOn:  
     - component:One-More  
+    - component:subcomponent1      
+    - component:subcomponent2
+    - component:subcomponent3        
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -77,3 +80,41 @@ spec:
   owner: me
   system: One
   lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent1
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: library
+  owner: me
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent2
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: library
+  owner: me
+  lifecycle: production
+  dependsOn:  
+    - component:subcomponent3  
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent3
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: library
+  owner: me
+  lifecycle: production  
