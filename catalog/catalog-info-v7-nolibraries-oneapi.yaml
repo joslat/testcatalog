@@ -262,7 +262,8 @@ spec:
   type: openapi  
   lifecycle: production  
   owner: common  
-  definition: 'https://raw.githubusercontent.com/joslat/testcatalog/main/catalog/schemas/adsvum-rest-swagger-schema.json' # Replace with the URL or inline OpenAPI specification for the REST API  
+  definition: https://raw.githubusercontent.com/joslat/testcatalog/main/catalog/schemas/adsvum-rest-swagger-schema.json 
+  # Replace with the URL or inline OpenAPI specification for the REST API  
   system: One-Login  
 ---  
 apiVersion: backstage.io/v1alpha1  
@@ -278,5 +279,6 @@ spec:
   type: graphql  
   lifecycle: production  
   owner: common  
-  definition: 'http://raw.githubusercontent.com/joslat/testcatalog/main/catalog/schemas/adsvum-graphql-schema.graphql' # Replace with the URL or inline GraphQL schema for the GraphQL API 
+  definition: http://raw.githubusercontent.com/joslat/testcatalog/main/catalog/schemas/adsvum-graphql-schema.graphql
+   # Replace with the URL or inline GraphQL schema for the GraphQL API 
   system: One-Login  
