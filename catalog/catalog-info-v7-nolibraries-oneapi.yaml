@@ -304,7 +304,13 @@ spec:
   type: openapi  
   lifecycle: production  
   owner: common  
-  system: One-Login   
+  system: One-Login 
+  definition: |  
+    openapi: 3.0.3  
+    info:  
+      title: Empty API  
+      version: 1.0.0  
+    paths: {}    
 ---  
 apiVersion: backstage.io/v1alpha1  
 kind: API  
@@ -320,5 +326,10 @@ spec:
   lifecycle: production  
   owner: common  
   system: One-Login   
-
+  definition: |  
+    openapi: 3.0.3  
+    info:  
+      title: Empty API  
+      version: 1.0.0  
+    paths: {}
   # api generatio 
