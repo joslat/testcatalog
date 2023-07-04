@@ -52,7 +52,9 @@ spec:
     - component:subcomponent4
     - component:subcomponent5
     - component:One-More    
-    - component:subcomponent6        
+    - component:subcomponent6
+    - resource:servicebus  
+    - resource:database            
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -85,6 +87,9 @@ spec:
   owner: me
   system: One
   lifecycle: production
+  dependsOn:  
+    - resource:servicebus  
+    - resource:database    
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -111,6 +116,10 @@ spec:
   lifecycle: production
   dependsOn:  
     - component:subcomponent3
+    - component:subcomponent4
+    - component:subcomponent5
+    - resource:servicebus  
+    - resource:database        
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -149,6 +158,8 @@ spec:
   type: service
   owner: me
   lifecycle: production
+  dependsOn:  
+    - component:subcomponent6  
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -161,3 +172,33 @@ spec:
   type: service
   owner: me
   lifecycle: production      
+---
+apiVersion: backstage.io/v1alpha1  
+kind: Resource  
+metadata:  
+  name: database
+  tags:
+    - dev   
+spec:  
+  type: database  
+  owner: me
+  system: One   
+---
+apiVersion: backstage.io/v1alpha1  
+kind: Resource  
+metadata:  
+  name: servicebus 
+  tags:
+    - dev   
+spec:  
+  type: service-bus  
+  owner: me 
+  system: One   
+#Changes
+# Subcomponent 2 depends on subcomponent 4 and 5
+# Subcomponent 5 depends on subcomponent 6
+# Additions 
+# resource database and servicebus
+#    - resource:servicebus  
+#    - resource:database
+# added to one-2 and subcomponent 2 and to "one more"
