@@ -349,6 +349,7 @@ spec:
   type: graphql  
   lifecycle: production  
   owner: common  
-  definition: https://github.com/joslat/testcatalog/blob/main/catalog/schemas/adsvum-rest-swagger-schema.json
+  definition: 
+    $text: https://github.com/joslat/testcatalog/blob/main/catalog/schemas/adsvum-graphql-schema.graphql
    # Replace with the URL or inline GraphQL schema for the GraphQL API 
   system: One-Login  
