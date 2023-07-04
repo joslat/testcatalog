@@ -1,0 +1,163 @@
+# System
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata: 
+  name: One
+  description: Sample system
+  tags:
+    - dotnet
+    - aspnet
+  links:
+  - url: https://www.sample.com/
+    title: sample
+    icon: dashboard
+spec:
+  type: service
+  owner: me
+  lifecycle: production
+  dependsOn:  
+    - One-1
+    - One-2
+    - One-3
+# sub-systems (components)
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-1
+  description: sample.
+  tags:
+    - dotnet
+    - aspnet
+spec:
+  type: service
+  owner: me
+  system: One
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-2
+  description: sample.
+  tags:
+    - dotnet
+    - aspnet
+spec:
+  type: service
+  owner: me
+  system: One
+  lifecycle: production
+  dependsOn:  
+    - component:subcomponent4
+    - component:subcomponent5
+    - component:One-More    
+    - component:subcomponent6        
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-3
+  description: sample..
+  tags:
+    - dotnet
+    - aspnet
+spec:
+  type: service
+  owner: me
+  system: One
+  lifecycle: production
+  dependsOn:  
+    - component:One-More  
+    - component:subcomponent1      
+    - component:subcomponent2
+    - component:subcomponent3        
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: One-More
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: service
+  owner: me
+  system: One
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent1
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: library
+  owner: me
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent2
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: library
+  owner: me
+  lifecycle: production
+  dependsOn:  
+    - component:subcomponent3
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent3
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: library
+  owner: me
+  lifecycle: production  
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent4
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: library
+  owner: me
+  lifecycle: production
+  dependsOn:  
+    - component:subcomponent6  
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent5
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: service
+  owner: me
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata: 
+  name: subcomponent6
+  description: sample
+  tags:
+    - dotnet
+spec:
+  type: service
+  owner: me
+  lifecycle: production      
