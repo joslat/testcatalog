@@ -1,0 +1,916 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "AdConnect Rest API New",
+      "version": "v1"
+    },
+    "paths": {
+      "/adsvum/claims": {
+        "get": {
+          "tags": [
+            "Adsvum"
+          ],
+          "parameters": [
+            {
+              "name": "samAccountName",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserClaim"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserClaim"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserClaim"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/adsvum/app/userofapplication/{appId}": {
+        "get": {
+          "tags": [
+            "Adsvum"
+          ],
+          "parameters": [
+            {
+              "name": "appId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserOfApplication"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserOfApplication"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserOfApplication"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/adsvum/application/{applicationId}": {
+        "get": {
+          "tags": [
+            "AdsvumApp"
+          ],
+          "parameters": [
+            {
+              "name": "applicationId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AdAppProfile"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AdAppProfile"
+                    }
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AdAppProfile"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/adsvum/authenticate/user/{userId}": {
+        "post": {
+          "tags": [
+            "AdsvumApp"
+          ],
+          "parameters": [
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LdapAuthenticateResult"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LdapAuthenticateResult"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/LdapAuthenticateResult"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/mylifeuser": {
+        "post": {
+          "tags": [
+            "MyLifeUser"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAdUserRequest"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAdUserRequest"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAdUserRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "MyLifeUser"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAdUserRequest"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAdUserRequest"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAdUserRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/mylifeuser/{samAccountName}/enable": {
+        "post": {
+          "tags": [
+            "MyLifeUser"
+          ],
+          "parameters": [
+            {
+              "name": "samAccountName",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/mylifeuser/{samAccountName}/disable": {
+        "post": {
+          "tags": [
+            "MyLifeUser"
+          ],
+          "parameters": [
+            {
+              "name": "samAccountName",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/mylifeuser/{samAccountName}": {
+        "get": {
+          "tags": [
+            "MyLifeUser"
+          ],
+          "parameters": [
+            {
+              "name": "samAccountName",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AdUser"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/mylifeuser/{samAccountName}/unlock": {
+        "post": {
+          "tags": [
+            "MyLifeUser"
+          ],
+          "parameters": [
+            {
+              "name": "samAccountName",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/mylifeuser/resetpassword": {
+        "post": {
+          "tags": [
+            "MyLifeUser"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResetMyLifeUserPasswordRequest"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResetMyLifeUserPasswordRequest"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResetMyLifeUserPasswordRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "AdApplicationTemplate": {
+          "type": "object",
+          "properties": {
+            "onlineFormular": {
+              "type": "boolean"
+            },
+            "approve": {
+              "type": "boolean"
+            },
+            "approveTwice": {
+              "type": "boolean"
+            },
+            "execSrf": {
+              "type": "boolean"
+            },
+            "descriptionMac": {
+              "type": "string",
+              "nullable": true
+            },
+            "ntGroup": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "AdAppProfile": {
+          "type": "object",
+          "properties": {
+            "appId": {
+              "type": "string",
+              "nullable": true
+            },
+            "type": {
+              "type": "string",
+              "nullable": true
+            },
+            "applicationName": {
+              "type": "string",
+              "nullable": true
+            },
+            "applicationRitaId": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            },
+            "manager": {
+              "$ref": "#/components/schemas/AdManager"
+            },
+            "managerStv": {
+              "$ref": "#/components/schemas/AdManager"
+            },
+            "applicationTemplate": {
+              "$ref": "#/components/schemas/AdApplicationTemplate"
+            }
+          },
+          "additionalProperties": false
+        },
+        "AdManager": {
+          "type": "object",
+          "properties": {
+            "mail": {
+              "type": "string",
+              "nullable": true
+            },
+            "samAccountName": {
+              "type": "string",
+              "nullable": true
+            },
+            "department": {
+              "type": "string",
+              "nullable": true
+            },
+            "distinguishedName": {
+              "type": "string",
+              "nullable": true
+            },
+            "statusAccountControl": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "AdUser": {
+          "type": "object",
+          "properties": {
+            "distinguishedName": {
+              "type": "string",
+              "nullable": true
+            },
+            "userAccountControl": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "isAccountLockedOut": {
+              "type": "boolean"
+            },
+            "accountLockoutTime": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "badLogonCount": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "lastLogon": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "lastPasswordSet": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "passwordNeverExpires": {
+              "type": "boolean"
+            },
+            "userPrincipalName": {
+              "type": "string",
+              "nullable": true
+            },
+            "lastname": {
+              "type": "string",
+              "nullable": true
+            },
+            "firstname": {
+              "type": "string",
+              "nullable": true
+            },
+            "emailAddress": {
+              "type": "string",
+              "nullable": true
+            },
+            "phoneNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "userLanguage": {
+              "type": "string",
+              "nullable": true
+            },
+            "gpraNr": {
+              "type": "string",
+              "nullable": true
+            },
+            "gender": {
+              "type": "string",
+              "nullable": true
+            },
+            "samAccountName": {
+              "type": "string",
+              "nullable": true
+            },
+            "commonName": {
+              "type": "string",
+              "nullable": true
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/UserClaim"
+              },
+              "nullable": true
+            },
+            "mobileNr": {
+              "type": "string",
+              "nullable": true
+            },
+            "isEnabled": {
+              "type": "boolean"
+            },
+            "lastBadPasswordAttempt": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "CreateAdUserRequest": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string",
+              "nullable": true
+            },
+            "lastName": {
+              "type": "string",
+              "nullable": true
+            },
+            "language": {
+              "type": "string",
+              "nullable": true
+            },
+            "emailAddress": {
+              "type": "string",
+              "nullable": true
+            },
+            "mobileNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "password": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "LdapAuthenticateResult": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "string",
+              "nullable": true
+            },
+            "isAuthenticated": {
+              "type": "boolean"
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/StringStringKeyValuePair"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "ResetMyLifeUserPasswordRequest": {
+          "type": "object",
+          "properties": {
+            "samAccountName": {
+              "type": "string",
+              "nullable": true
+            },
+            "newPassword": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "StringStringKeyValuePair": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string",
+              "nullable": true
+            },
+            "value": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "UpdateAdUserRequest": {
+          "type": "object",
+          "properties": {
+            "samAccountName": {
+              "type": "string",
+              "nullable": true
+            },
+            "firstName": {
+              "type": "string",
+              "nullable": true
+            },
+            "lastName": {
+              "type": "string",
+              "nullable": true
+            },
+            "language": {
+              "type": "string",
+              "nullable": true
+            },
+            "emailAddress": {
+              "type": "string",
+              "nullable": true
+            },
+            "mobileNumber": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "UserClaim": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "nullable": true
+            },
+            "value": {
+              "type": "string",
+              "nullable": true
+            },
+            "properties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "UserOfApplication": {
+          "type": "object",
+          "properties": {
+            "sAMAccountName": {
+              "type": "string",
+              "nullable": true
+            },
+            "mail": {
+              "type": "string",
+              "nullable": true
+            },
+            "sn": {
+              "type": "string",
+              "nullable": true
+            },
+            "givenName": {
+              "type": "string",
+              "nullable": true
+            },
+            "displayName": {
+              "type": "string",
+              "nullable": true
+            },
+            "telephoneNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "distinguishedName": {
+              "type": "string",
+              "nullable": true
+            },
+            "employeeType": {
+              "type": "string",
+              "nullable": true
+            },
+            "UserGpraNummer": {
+              "type": "string",
+              "nullable": true
+            },
+            "AZObjectID": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "securitySchemes": {
+        "Bearer": {
+          "type": "apiKey",
+          "description": "JWT Token in Bearer format. Example: \"Bearer TOKEN\"",
+          "name": "Authorization",
+          "in": "header"
+        }
+      }
+    },
+    "security": [
+      {
+        "Bearer": [ ]
+      }
+    ]
+  }
+  
