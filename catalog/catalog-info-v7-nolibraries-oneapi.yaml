@@ -315,9 +315,26 @@ spec:
   owner: common  
   definition:  
     # Replace with the URL or inline OpenAPI specification for the REST API  
-    $openapi: https://github.com/joslat/testcatalog/blob/main/catalog/schemas/adsvum-rest-swagger-schema.json
+    $text: https://github.com/joslat/testcatalog/blob/main/catalog/schemas/adsvum-rest-swagger-schema.json
   system: One-Login    
-
+---  
+apiVersion: backstage.io/v1alpha1  
+kind: API  
+metadata:  
+  name: ADConnect-api-RESTV5
+  description: REST API for ADConnect  
+  tags:  
+    - dotnet 
+    - rest
+    - api 
+spec:  
+  type: openapi  
+  lifecycle: production  
+  owner: common  
+  definition:  
+    # Replace with the URL or inline OpenAPI specification for the REST API  
+    $text: https://raw.githubusercontent.com/joslat/testcatalog/main/catalog/schemas/adsvum-rest-swagger-schema.json
+  system: One-Login  
 ---  
 apiVersion: backstage.io/v1alpha1  
 kind: API  
