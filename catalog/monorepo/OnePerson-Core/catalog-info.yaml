@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: OnePerson-Core
+  links:
+    - url: https://OnePerson-Core.a.portals.swisslife.ch/
+      title: App
+      icon: dashboard
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/source-location: url:https://dev.azure.com/swisslife/F2C/_git/OnePerson-Core
+spec:
+  owner: common

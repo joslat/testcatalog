@@ -404,3 +404,8 @@ spec:
   type: service-bus  
   owner: common 
   system: One-Login    
+
+
+# remove nuget packages
+# AD Connect- rest & graphql // one login access it through it.
+# 

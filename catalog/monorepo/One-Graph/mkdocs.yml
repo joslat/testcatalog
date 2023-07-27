@@ -1,0 +1,6 @@
+Site_name: One-Graph-docs
+Nav:
+  - Home: index.md
+  - Readme: readme.md
+Plugins:
+  - techdocs-core

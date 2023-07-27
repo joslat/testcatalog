@@ -1,0 +1,34 @@
+ApiVersion: backstage.io/v1alpha1
+Kind: Location
+Metadata:
+  Name: monorepo-descriptor-poc
+Spec:
+  Type: file
+  Targets:
+    - C:\BackstageMonorepo\Backstage\catalog-info.yaml
+    - C:\BackstageMonorepo\PXLIdent\catalog-info.yaml
+    - C:\BackstageMonorepo\Fusion-Account\catalog-info.yaml
+    - C:\BackstageMonorepo\Configuration-Core\catalog-info.yaml
+    - C:\BackstageMonorepo\Fiantec-Core\catalog-info.yaml
+    - C:\BackstageMonorepo\DocuBuild\catalog-info.yaml
+    - C:\BackstageMonorepo\One-Graph\catalog-info.yaml
+    - C:\BackstageMonorepo\Magnet\catalog-info.yaml
+    - C:\BackstageMonorepo\One-Trust\catalog-info.yaml
+    - C:\BackstageMonorepo\PhotoLibrary\catalog-info.yaml
+    - C:\BackstageMonorepo\Build-Nuke\catalog-info.yaml
+    - C:\BackstageMonorepo\Boost\catalog-info.yaml
+    - C:\BackstageMonorepo\Common-Core\catalog-info.yaml
+    - C:\BackstageMonorepo\SyncHub\catalog-info.yaml
+    - C:\BackstageMonorepo\OnePerson-Core\catalog-info.yaml
+    - C:\BackstageMonorepo\Twin-App\catalog-info.yaml
+    - C:\BackstageMonorepo\DocuStore-Core\catalog-info.yaml
+    - C:\BackstageMonorepo\SecureDocLink\catalog-info.yaml
+    - C:\BackstageMonorepo\GDPR\catalog-info.yaml
+    - C:\BackstageMonorepo\Fusion-Login\catalog-info.yaml
+    - C:\BackstageMonorepo\Notification-Core\catalog-info.yaml
+    - C:\BackstageMonorepo\IdOps\catalog-info.yaml
+    - C:\BackstageMonorepo\Textli\catalog-info.yaml
+    - C:\BackstageMonorepo\OnPremProxy\catalog-info.yaml
+    - C:\BackstageMonorepo\PartnerDocs\catalog-info.yaml
+    - C:\BackstageMonorepo\RiskProfile\catalog-info.yaml
+    - C:\BackstageMonorepo\PostInfoService.Core\catalog-info.yaml

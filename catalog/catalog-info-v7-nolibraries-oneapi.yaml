@@ -309,7 +309,7 @@ spec:
     openapi: 3.0.3  
     info:  
       title: Empty API  
-      version: 1.0.0  
+      version: 1.0.0 
     paths: {}    
 ---  
 apiVersion: backstage.io/v1alpha1  
@@ -332,4 +332,3 @@ spec:
       title: Empty API  
       version: 1.0.0  
     paths: {}
-  # api generatio 
