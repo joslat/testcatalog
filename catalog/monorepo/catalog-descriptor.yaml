@@ -1,10 +1,10 @@
-ApiVersion: backstage.io/v1alpha1
-Kind: Location
-Metadata:
-  Name: monorepo-descriptor-poc
-Spec:
-  Type: file
-  Targets:
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: monorepo-descriptor-poc
+spec:
+  type: file
+  targets:
     - C:\BackstageMonorepo\Backstage\catalog-info.yaml
     - C:\BackstageMonorepo\PXLIdent\catalog-info.yaml
     - C:\BackstageMonorepo\Fusion-Account\catalog-info.yaml

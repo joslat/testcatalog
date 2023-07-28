@@ -1,6 +1,6 @@
-Site_name: OnePerson-Core-docs
-Nav:
+site_name: Fiantec-Core-docs
+nav:
   - Home: index.md
   - Readme: readme.md
-Plugins:
+plugins:
   - techdocs-core

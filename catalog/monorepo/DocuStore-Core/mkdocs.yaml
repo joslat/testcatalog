@@ -1,6 +1,6 @@
-Site_name: One-Trust-docs
-Nav:
+site_name: DocuStore-Core-docs
+nav:
   - Home: index.md
   - Readme: readme.md
-Plugins:
+plugins:
   - techdocs-core

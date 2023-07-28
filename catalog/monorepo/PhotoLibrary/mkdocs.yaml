@@ -1,6 +1,6 @@
-Site_name: Magnet-docs
-Nav:
+site_name: PhotoLibrary-docs
+nav:
   - Home: index.md
   - Readme: readme.md
-Plugins:
+plugins:
   - techdocs-core

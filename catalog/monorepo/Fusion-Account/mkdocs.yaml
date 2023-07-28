@@ -1,6 +1,6 @@
-Site_name: Boost-docs
-Nav:
+site_name: Fusion-Account-docs
+nav:
   - Home: index.md
   - Readme: readme.md
-Plugins:
+plugins:
   - techdocs-core

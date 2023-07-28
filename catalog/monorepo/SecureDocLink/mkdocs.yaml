@@ -1,6 +1,6 @@
-Site_name: One-Graph-docs
-Nav:
+site_name: SecureDocLink-docs
+nav:
   - Home: index.md
   - Readme: readme.md
-Plugins:
+plugins:
   - techdocs-core
